@@ -1,0 +1,57 @@
+/*
+ * Decompiled with CFR 0.152.
+ */
+package com.leave.old.Utils;
+
+import net.minecraft.entity.Entity;
+
+public class Rotation {
+    private float yaw;
+    private float pitch;
+    public static float serverPitch;
+
+    public Rotation(float yaw, float pitch) {
+        this.yaw = yaw;
+        this.pitch = pitch;
+    }
+
+    public Rotation(Entity ent) {
+        this.yaw = ent.rotationYaw;
+        this.pitch = ent.rotationPitch;
+    }
+
+    public void add(float yaw, float pitch) {
+        this.yaw += yaw;
+        this.pitch += pitch;
+    }
+
+    public void remove(float yaw, float pitch) {
+        this.yaw -= yaw;
+        this.pitch -= pitch;
+    }
+
+    public float getYaw() {
+        return this.yaw;
+    }
+
+    public float getPitch() {
+        return this.pitch;
+    }
+
+    public void setYaw(float yaw) {
+        this.yaw = yaw;
+    }
+
+    public void setPitch(float pitch) {
+        this.pitch = pitch;
+    }
+
+    public static void setServerPitch(float pitch) {
+        serverPitch = pitch;
+    }
+
+    public static float getServerPitch() {
+        return serverPitch;
+    }
+}
+
